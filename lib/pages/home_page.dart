@@ -1,3 +1,4 @@
+import 'package:fit_me/pages/article_page.dart';
 import 'package:flutter/material.dart';
 import 'package:fit_me/auth.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -41,8 +42,17 @@ class HomePage extends StatelessWidget{
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget> [
-                _userUid(),
-                _signOutButton(),
+            _userUid(),
+            _signOutButton(),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ArticlePage()),
+                );
+              },
+              child: const Text('Go to Article Page'),
+            ),    
               ],
             ),
             

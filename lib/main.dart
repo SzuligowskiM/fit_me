@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'FitME App',
       theme: ThemeData(
 
         colorScheme: ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 63, 210, 65)),
