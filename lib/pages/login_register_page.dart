@@ -50,12 +50,25 @@ class LoginPage extends StatefulWidget{
       return const Text("FitMe");
     }
 
-    Widget _entryField(
+    Widget _entryFieldLogin(
       String title, 
       TextEditingController controller
       ){
       return TextField(
         controller: controller,
+        decoration: InputDecoration(
+          labelText: title,
+        ),
+      );
+    }
+
+    Widget _entryFieldPassword(
+      String title, 
+      TextEditingController controller
+      ){
+      return TextField(
+        controller: controller,
+        obscureText: true,
         decoration: InputDecoration(
           labelText: title,
         ),
@@ -100,8 +113,9 @@ class LoginPage extends StatefulWidget{
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                _entryField('email', _controllerEmail),
-                _entryField('password', _controllerPassword),
+                _entryFieldLogin('email', _controllerEmail),
+                SizedBox(width: 8),
+                _entryFieldPassword('password', _controllerPassword),
                 _errorMessage(),
                 _submitButton(),
                 _loginOrRegisterButton()
