@@ -21,17 +21,20 @@ class ArticlePage extends StatelessWidget {
             itemBuilder: (context, index) {
               var title = articlesData[index]['title'];
               var text = articlesData[index]['text'];
-              int maxTextLength = 30;
+              var isRead = articlesData[index]['isRead'];
+              var documentId = articlesData[index].id;
+              int maxTextLength = 40;
               var truncatedText = text.length > maxTextLength ? text.substring(0, maxTextLength) + '...' : text;
 
               return ListTile(
                 title: Text(title),
                 subtitle: Text(truncatedText),
+                tileColor: isRead ? null : Colors.grey[200],
                 onTap: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => ArticleDetailPage(title: title, text: text),
+                      builder: (context) => ArticleDetailPage(documentId: documentId ,title: title, text: text),
                     ),
                   );
                 },
