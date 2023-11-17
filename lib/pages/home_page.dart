@@ -1,4 +1,5 @@
 import 'package:fit_me/pages/article_page.dart';
+import 'package:fit_me/pages/challenges_page.dart';
 import 'package:flutter/material.dart';
 import 'package:fit_me/auth.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -52,6 +53,15 @@ class HomePage extends StatelessWidget{
                 );
               },
               child: const Text('Go to Article Page'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ChallengesPage()),
+                );
+              },
+              child: const Text('Go to Challenges Page'),
             ),    
               ],
             ),
